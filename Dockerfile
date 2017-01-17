@@ -22,6 +22,13 @@ RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
 
 RUN rbenv install $RUBY_VERSION &&  rbenv global $RUBY_VERSION
 
-RUN gem install bundler --no-ri --no-rdoc
+RUN gem install rake -N --no-ri --no-rdoc && \
+    gem install bundler --no-ri --no-rdoc && \
+    gem install io-console --no-ri --no-rdoc  && \
+    gem install html-proofer --no-ri --no-rdoc && \
+    gem install github-pages -v '~> 39' --no-ri --no-rdoc && \
+    gem install json --no-ri --no-rdoc
 
 run pip install --upgrade pip awscli boto3 botocore
+
+CMD ["/bin/bash"]
