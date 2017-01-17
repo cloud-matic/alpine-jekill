@@ -9,7 +9,7 @@ RUN apk update && \
     apk upgrade
 
 RUN apk add --update gcc gnupg curl ruby bash procps musl-dev make linux-headers \
-    zlib zlib-dev openssl openssl-dev libssl1.0 libffi-dev ruby-dev tar \
+    zlib zlib-dev openssl openssl-dev libssl1.0 libffi-dev ruby-dev tar nodejs \
     readline-dev build-base git py2-pip && rm -rf /var/cache/apk/*
 
 
