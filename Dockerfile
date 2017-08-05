@@ -25,9 +25,11 @@ RUN adduser  -Su 1000 -G jekyll jekyll
 
 RUN yes | gem install bundler --no-ri --no-rdoc
 
-RUN yes | gem install --force --no-ri --no-rdoc html-proofer jekyll-sitemap jekyll-mentions jekyll-coffeescript \
-          jekyll-sass-converter jekyll-redirect-from jekyll-paginate jekyll-compose jekyll-feed jekyll-docs RedCloth \
-          kramdown jemoji minima github-pages jekyll-github-metadata octopress-minify-html 
+RUN yes | gem install --force --no-ri --no-rdoc html-proofer RedCloth kramdown jemoji minima github-pages \
+          jekyll-sitemap jekyll-mentions jekyll-coffeescript jekyll-sass-converter jekyll-redirect-from \
+          jekyll-paginate jekyll-compose jekyll-feed jekyll-docs jekyll-github-metadata jekyll-minifier
+          #octopress-minify-html
+
 
 RUN apk add --no-cache python3 && \
     pip3 install --upgrade pip setuptools && \
