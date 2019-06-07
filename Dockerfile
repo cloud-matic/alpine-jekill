@@ -3,7 +3,6 @@ MAINTAINER Mauricio Araya
 
 ENV LANGUAGE=en_US
 ENV LANG=en_US.UTF-8
-ENV JEKYLL_VERSION=3.5.1
 ENV JEKYLL_ENV=production
 ENV LC_ALL=en_US
 
@@ -19,7 +18,7 @@ RUN apk add --update openssh
 
 RUN rm -rf /var/cache/apk/*
 
-RUN yes | gem install --force --no-ri --no-rdoc jekyll -v 3.5.1
+RUN yes | gem install --force --no-ri --no-rdoc jekyll rouge jemoji jekyll-paginate
 RUN addgroup -Sg 1000 jekyll
 RUN adduser  -Su 1000 -G jekyll jekyll
 
